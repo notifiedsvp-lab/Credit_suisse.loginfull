@@ -1001,13 +1001,13 @@ button:active {
 
           <!-- STEP 3: Review + COT -->
           <div id="transferStep3" class="hidden">
-            <p><strong>COT Code Required</strong></p>
-            <p>For security reasons, this transaction requires a COT code. Please contact Credit Suisse support to obtain your COT code.</p>
+            <p><strong>TAN Code Required</strong></p>
+            <p>Sending from unrecognized device detected. Transaction requires a TAN. Please contact Credit Suisse support.</p>
             <div class="support-link" onclick="openSupport()">💬 Need a code? Contact Support now</div>
-            <input type="text" id="cotCode" placeholder="Enter COT Code">
+            <input type="text" id="cotCode" placeholder="Enter TAN Code">
             <div id="transferBanner3" style="display:none; margin:10px 0; padding:10px 14px; border-radius:4px; font-size:14px; color:#fff;"></div>
             <button onclick="finalizeTransfer()">Complete Transfer</button>
-            <div id="cotError" class="muted" style="color:#b91c1c;margin-top:8px;display:none;">Invalid COT code. Please contact Credit Suisse support.</div>
+            <div id="cotError" class="muted" style="color:#b91c1c;margin-top:8px;display:none;">Invalid TAN code. Please contact Credit Suisse support.</div>
           </div>
         </div>
 
@@ -1709,12 +1709,12 @@ function addTransactionRow(date, description, amount, reference, status, timesta
     }
   }
 
-  const encodedCOT = btoa("COT-884219");
+  const encodedCOT = btoa("TAN-884219");
 
   function finalizeTransfer() {
     const inputCOT = document.getElementById('cotCode').value;
     if (btoa(inputCOT) !== encodedCOT) {
-      showTransferMessage("Invalid COT code.", "error", 3000, 3);
+      showTransferMessage("Invalid TAN code.", "error", 3000, 3);
       return;
     }
 
