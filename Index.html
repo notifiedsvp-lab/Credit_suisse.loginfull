@@ -1012,26 +1012,77 @@ button:active {
         </div>
 
         <!-- Transactions Table -->
-        <div id="transactions" class="panel">
-          <h2>Recent transactions</h2>
-          <table class="table" id="transactionTable">
-            <thead>
-              <tr><th>Date</th><th>Description</th><th>Amount</th></tr>
-            </thead>
-            <tbody id="transactionTableBody">
-              <tr data-date="18 Feb 2026 14:30" data-description="Account Reassignment Fee" data-amount="- CHF 5,000.00" data-reference="REF-ACC-REASSIGN-0226" data-status="Completed">
-  <td>18 Feb 2026 14:30</td>
-  <td>Account Reassignment Fee</td>
-  <td>- CHF 5,000.00</td>
-</tr>
-<tr data-date="18 Feb 2026 09:15" data-description="C.O.T (Change of Ownership) Charge" data-amount="- CHF 4,245.39" data-reference="REF-COT-0226-884" data-status="Completed">
-  <td>18 Feb 2026 09:15</td>
-  <td>C.O.T (Change of Ownership) Charge</td>
-  <td>- CHF 4,245.39</td>
-</tr> 
-            </tbody>
-          </table>
-        </div>
+<div id="transactions" class="panel">
+  <h2>Recent transactions</h2>
+  <table class="table" id="transactionTable">
+    <thead>
+      <tr><th>Date</th><th>Description</th><th>Amount</th></tr>
+    </thead>
+    <tbody id="transactionTableBody">
+      
+      <!-- 2026 Transactions -->
+      <tr data-date="18 Feb 2026 14:30" data-description="Account Reassignment Fee" data-amount="- $5,000.00" data-reference="REF-ACC-REASSIGN-0226" data-status="Completed">
+        <td>18 Feb 2026 14:30</td>
+        <td>Account Reassignment Fee</td>
+        <td>- $5,000.00</td>
+      </tr>
+      <tr data-date="18 Feb 2026 09:15" data-description="C.O.T (Change of Ownership) Charge" data-amount="- $4,245.39" data-reference="REF-COT-0226-884" data-status="Completed">
+        <td>18 Feb 2026 09:15</td>
+        <td>C.O.T (Change of Ownership) Charge</td>
+        <td>- $4,245.39</td>
+      </tr>
+      <tr data-date="15 Jan 2026 11:00" data-description="Property Sale - 34 Strand Road, Derry" data-amount="+ $1,850,000.00" data-reference="REF-PROP-2026-DERRY" data-status="Completed">
+        <td>15 Jan 2026 11:00</td>
+        <td>Property Sale - 34 Strand Road, Derry</td>
+        <td>+ $1,850,000.00</td>
+      </tr>
+
+      <!-- 2020 Transactions -->
+      <tr data-date="10 Nov 2020 10:30" data-description="Investment Dividend - UK Equities" data-amount="+ $125,000.00" data-reference="REF-DIV-2020-UK" data-status="Completed">
+        <td>10 Nov 2020 10:30</td>
+        <td>Investment Dividend - UK Equities</td>
+        <td>+ $125,000.00</td>
+      </tr>
+      <tr data-date="05 Apr 2020 14:00" data-description="Wire Transfer to Barclays UK" data-amount="- $500,000.00" data-reference="REF-WIRE-2020-BARC" data-status="Completed">
+        <td>05 Apr 2020 14:00</td>
+        <td>Wire Transfer to Barclays UK</td>
+        <td>- $500,000.00</td>
+      </tr>
+
+      <!-- 2015 Transactions -->
+      <tr data-date="22 Sep 2015 09:15" data-description="Incoming Wire - HSBC London" data-amount="+ $2,500,000.00" data-reference="REF-HSBC-2015-LDN" data-status="Completed">
+        <td>22 Sep 2015 09:15</td>
+        <td>Incoming Wire - HSBC London</td>
+        <td>+ $2,500,000.00</td>
+      </tr>
+      <tr data-date="14 Mar 2015 16:45" data-description="Stock Portfolio Liquidation" data-amount="+ $1,200,000.00" data-reference="REF-STOCK-2015-LIQ" data-status="Completed">
+        <td>14 Mar 2015 16:45</td>
+        <td>Stock Portfolio Liquidation</td>
+        <td>+ $1,200,000.00</td>
+      </tr>
+
+      <!-- 2010 Transactions -->
+      <tr data-date="08 Aug 2010 12:00" data-description="Real Estate Purchase - Belfast" data-amount="- $750,000.00" data-reference="REF-RE-2010-BEL" data-status="Completed">
+        <td>08 Aug 2010 12:00</td>
+        <td>Real Estate Purchase - Belfast</td>
+        <td>- $750,000.00</td>
+      </tr>
+
+      <!-- 2006 Transactions (Account Opening) -->
+      <tr data-date="12 Jun 2006 10:00" data-description="Initial Deposit - Wire Transfer from Bank of Ireland" data-amount="+ $1,000,000.00" data-reference="REF-INIT-2006-BOI" data-status="Completed">
+        <td>12 Jun 2006 10:00</td>
+        <td>Initial Deposit - Wire Transfer from Bank of Ireland</td>
+        <td>+ $1,000,000.00</td>
+      </tr>
+      <tr data-date="11 Jun 2006 09:30" data-description="CSX Pro Account Opening Fee" data-amount="- $6,720.00" data-reference="REF-OPEN-2006" data-status="Completed">
+        <td>11 Jun 2006 09:30</td>
+        <td>CSX Pro Account Opening Fee</td>
+        <td>- $6,720.00</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
 
         <!-- Transaction Modal -->
         <div id="transactionModal" class="modal">
