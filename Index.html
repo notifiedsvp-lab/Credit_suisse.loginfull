@@ -833,7 +833,7 @@ button:active {
     gap:14px;
     white-space:nowrap;
   ">
-    <span>Welcome, <strong>Adeline</strong></span>
+    <span>Welcome, <strong>Colin</strong></span>
     <a href="#" onclick="logout()" style="
   color:rgba(255,255,255,0.7);
   font-size:14px;
@@ -992,8 +992,8 @@ button:active {
             <label>IBAN / Account Number</label><input type="text" id="accountNumber" placeholder="IBAN or Account Number">
             <label>SWIFT / BIC</label><input type="text" id="swiftBic" placeholder="SWIFT / BIC">
             <label>Country</label><input type="text" id="country" placeholder="Country">
-            <label>Amount (CHF)</label><input type="text" id="transferAmount" placeholder="0.00">
-            <small style="color:#6b7280; margin-top:-15px; margin-bottom:15px; display:block;">Only CHF transfers are supported</small>
+            <label>Amount (USD $)</label><input type="text" id="transferAmount" placeholder="0.00">
+            <small style="color:#6b7280; margin-top:-15px; margin-bottom:15px; display:block;">Only USD transfers are supported</small>
             <label>Reference</label><input type="text" id="transferReference" placeholder="Reference">
             <div id="transferBanner2" style="display:none; margin:10px 0; padding:10px 14px; border-radius:4px; font-size:14px; color:#fff;"></div>
             <button onclick="nextTransferStep()">Review Transfer</button>
@@ -1053,10 +1053,10 @@ button:active {
         <div id="investments" class="panel hidden">
           <h2>Investments</h2>
           <table class="table">
-            <tr><th>Asset</th><th>Quantity</th><th>Value (CHF)</th><th>Performance</th></tr>
-            <tr><td>Credit Suisse Fund</td><td>120</td><td>CHF 12,500.00</td><td>+3.2%</td></tr>
-            <tr><td>Swiss Government Bond</td><td>50</td><td>CHF 5,000.00</td><td>+1.1%</td></tr>
-            <tr><td>Nestlé Shares</td><td>200</td><td>CHF 22,000.00</td><td>-0.8%</td></tr>
+            <tr><th>Asset</th><th>Quantity</th><th>Value (USD)</th><th>Performance</th></tr>
+            <tr><td>Credit Suisse Fund</td><td>120</td><td>$ 12,500.00</td><td>+3.2%</td></tr>
+            <tr><td>Swiss Government Bond</td><td>50</td><td>$ 5,000.00</td><td>+1.1%</td></tr>
+            <tr><td>Nestlé Shares</td><td>200</td><td>$ 22,000.00</td><td>-0.8%</td></tr>
           </table>
           <button class="generate-report-btn" onclick="generateValuationReport()">📊 Generate Valuation Report</button>
           <canvas id="investmentsChart" width="400" height="200"></canvas>
@@ -1094,7 +1094,7 @@ button:active {
           <div class="settings-section">
             <button class="section-toggle">Account Details</button>
             <div class="section-content">
-              <p><strong>Account Holder:</strong> Adeline Rochet Pascale  </p>
+              <p><strong>Account Holder:</strong> Colin Davies Richard </p>
               <p><strong>Account Type:</strong> CSX Basic</p>
               <p><strong>IBAN:</strong> CH93 0076 2011 6238 5295 7</p>
               <p><strong>SWIFT / BIC:</strong> CRESCHZZ80A</p>
@@ -1177,22 +1177,22 @@ button:active {
   </div>
 
 <script>
-  const encodedUser = btoa('ROCHET-PAS');
+  const encodedUser = btoa('COLIN-JCDR');
   const STORAGE_KEY = 'bankState';
   
   
   // ===== APPROVED ACCOUNTS LIST =====
   const APPROVED_ACCOUNTS = [
-    '40-02-28 41758239',           // UK HSBC
-    '20-45-78 56918372',           // UK Barclays
-    '10070000 3920184756',          // Germany Deutsche Bank
-    '20040000 8473629105',          // Germany Commerzbank
-    '021000021 417829365',          // US Chase
-    '026009593 628194735',          // US Bank of America
-    '003-12345 4128396',            // Canada RBC
-    '30004 12345 03928471629',      // France BNP Paribas
-    '0483 3128456 79',              // Switzerland Credit Suisse
-    '062-123 417829365'             // Australia Commonwealth
+    '40-02-2841758239',           // UK HSBC
+    '20-45-7856918372',           // UK Barclays
+    '100700003920184756',          // Germany Deutsche Bank
+    '200400008473629105',          // Germany Commerzbank
+    '021000021417829365',          // US Chase
+    '026009593628194735',          // US Bank of America
+    '003-143454128396',            // Canada RBC
+    '300041884503928471629',      // France BNP Paribas
+    '0483372845679',              // Switzerland Credit Suisse
+    '062-181827829365'             // Australia Commonwealth
   ];
 
   function loadState() {
@@ -1200,7 +1200,7 @@ button:active {
     if (saved) return JSON.parse(saved);
     return {
       credentials: {
-        encodedPass: btoa('426tx36i1'),
+        encodedPass: btoa('DAVIEScolin#1'),
         twoFactorEnabled: true
       },
       security: {
@@ -1304,12 +1304,12 @@ button:active {
     }
   }
 
-  let accountBalance = parseFloat(localStorage.getItem('accountBalance')) || 11115217.00;
+  let accountBalance = parseFloat(localStorage.getItem('accountBalance')) || 10115217.00;
 
   function updateBalanceDisplay() {
     localStorage.setItem('accountBalance', accountBalance);
     document.getElementById('balanceDisplay').textContent =
-      'CHF ' + accountBalance.toLocaleString(undefined, {
+      '$ ' + accountBalance.toLocaleString(undefined, {
         minimumFractionDigits: 2
       });
   }
@@ -1568,7 +1568,7 @@ function addTransactionRow(date, description, amount, reference, status, timesta
     const overallPerf = ((totalValue - 39000) / 39000 * 100).toFixed(1);
     const summary = document.getElementById('investmentsSummary');
     if(summary){
-      summary.innerHTML = `<strong>Total Portfolio Value:</strong> CHF ${totalValue.toLocaleString()}<br>
+      summary.innerHTML = `<strong>Total Portfolio Value:</strong> $ ${totalValue.toLocaleString()}<br>
       <span style="color:${overallPerf >= 0 ? '#22c55e' : '#ef4444'};">
       ${overallPerf >= 0 ? '▲' : '▼'} Overall Performance: ${overallPerf}%</span>`;
     }
@@ -1751,7 +1751,7 @@ function addTransactionRow(date, description, amount, reference, status, timesta
       const dateTime = `${date} ${time}`;
       
       let transactionStatus;
-      let transactionAmount = `- CHF ${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+      let transactionAmount = `- $ ${amount.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
       
       if (isApproved) {
         accountBalance -= amount;
